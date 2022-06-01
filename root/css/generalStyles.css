@@ -30,6 +30,51 @@ p {
   line-height: 2rem;
 }
 
+a {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
+}
+
+header {
+  background-image: url('../img/backgroundImage.png');
+  background-size: cover;
+  background-color: #111;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.4rem;
+}
+
+form {
+  display: flex;
+  margin: -2.2rem 0 4.4rem 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #D1D5DB;
+}
+
+input {
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  flex-basis: 75%;
+  border: none;
+  border-right: 1px solid #D1D5DB;
+}
+
+button {
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  flex-basis: 25%;
+  border: none;
+}
+
+main {
+  padding: 0 4.4rem;
 }
