@@ -15,10 +15,16 @@
     />
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/generalStyles.css" />
+    <link rel="stylesheet" href="./css/movieCard.css" />
 
     <!-- SCRIPTS -->
-    <script src="./js/app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f70dfefa83.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/app.js" defer></script>
   </head>
 
   <body>
@@ -33,10 +39,35 @@
       </form>
 
       <section id="movies-list">
-        <article class="movie">
-          <img src="./img/movie1test.png" alt="" />
+        <article class="movie-card">
+          <img class="movie-img" src="./img/movie1test.png" alt="" />
           <div class="movie-info">
-            <h2>Blade Runner</h2>
+            <section class="movie-heading">
+              <h2>Blade Runner</h2>
+              <img src="./img/start.svg" alt="" />
+              <p class="movie-rating">6</p>
+            </section>
+            <section class="movie-meta">
+              <ul>
+                <li>117 min</li>
+                <li>Action, Drama, Sci-fi</li>
+                <li>
+                  <button class="btn-watchlist">
+                    <ul>
+                      <li><img src="./img/plusButton.svg" alt="" /></li>
+                      <li>Watchlist</li>
+                    </ul>
+                  </button>
+                </li>
+              </ul>
+            </section>
+            <section class="movie-description">
+              <p>
+                Young Blade Runner K's discovery of a long-buried secret leads
+                him to track down former Blade Runner Rick Deckard, who's been
+                missin...
+              </p>
+            </section>
           </div>
         </article>
       </section>

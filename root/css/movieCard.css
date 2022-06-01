@@ -1,0 +1,58 @@
+.movie-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.movie-img {
+  flex-basis: 20%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.movie-info {
+  flex-basis: 80%;
+  padding-left: 2rem;
+  max-width: 350px
+}
+
+.movie-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 0 1.1rem 0;
+}
+
+.movie-heading img {
+  width: 15px;
+  margin:  0 4px 0 8px;
+}
+
+.movie-meta {
+  margin-bottom: .8rem;
+}
+
+.movie-meta  > ul {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.movie-meta .btn-watchlist {
+  background-color: transparent;
+  border: none;
+  margin-left: 3rem;
+  cursor: pointer;
+  display: block
+}
+
+.movie-meta .btn-watchlist ul {
+  display: flex;
+  align-items: center;
+}
+
+.movie-meta .btn-watchlist ul img {
+  display: block;
+  margin-right: .5rem;
+}
