@@ -1,4 +1,5 @@
 const moviesListElement = document.querySelector('#movies-list');
+const formElement = document.querySelector('form');
 
 const getData = async (title) => {
   /* This API call is to get all the movies related to the serach. 
@@ -33,6 +34,7 @@ const getData = async (title) => {
 
 getData('Blade Runner').then((data) => console.log(data));
 
+// Create the html template for a single movie card
 const getMovieCardHtml = (movieDetails) => {
   const {
     Title: title,
@@ -49,7 +51,7 @@ const getMovieCardHtml = (movieDetails) => {
       <div class="movie-info">
         <section class="movie-heading">
           <h2>${title}</h2>
-          <img src="./img/start.svg" alt="start logo" />
+          <img src="./img/star.svg" alt="start logo" />
           <p class="movie-rating">${imdbRating}</p>
         </section>
         <section class="movie-meta">
@@ -74,3 +76,17 @@ const getMovieCardHtml = (movieDetails) => {
       </div>
     </article>`;
 };
+
+const renderMovies = (moviesData) => {
+  moviesListElement.innerHTML = moviesData
+    .map((movie) => getMovieCardHtml(movie))
+    .join('');
+};
+
+formElement.addEventListener('submit', async (e) => {
+  const formData = new FormData(formElement);
+  const titleSearched = formData.get('title');
+
+  const moviesData = await getData(titleSearched);
+  renderMovies(moviesData);
+});

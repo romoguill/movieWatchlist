@@ -73,6 +73,7 @@ button {
   padding: 1rem 1.5rem;
   flex-basis: 25%;
   border: none;
+  cursor: pointer;
 }
 
 main {
