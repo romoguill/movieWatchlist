@@ -1,22 +1,21 @@
 .movie-card {
   display: flex;
   align-items: flex-start;
-  max-height: 20rem;
+  height: 25rem;
   margin: 4rem 0;
 }
 
+.img-container {
+  height: 100%;
+}
+
 .movie-img {
-  flex-basis: 20%;
-  max-height: 25rem;
-  max-width: 100%;
-  border-radius: 5px;
-  object-fit: cover;
+  height: 100%;
 }
 
 .movie-info {
-  flex-basis: 80%;
+  flex-basis: 3;
   padding: 2rem;
-  max-width: 350px;
   overflow: hidden;
   height: 100%;
 }
@@ -30,14 +29,14 @@
 
 .movie-heading img {
   width: 15px;
-  margin:  0 4px 0 8px;
+  margin: 0 4px 0 8px;
 }
 
 .movie-meta {
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 }
 
-.movie-meta  > ul {
+.movie-meta > ul {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -62,5 +61,5 @@
 
 .movie-meta .btn-watchlist ul img {
   display: block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }

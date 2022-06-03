@@ -47,7 +47,9 @@ const getMovieCardHtml = (movieDetails) => {
 
   return `
     <article class="movie-card">
-      <img class="movie-img" src="${poster}" alt="movie poster" />
+      <div class="img-container">
+        <img class="movie-img" src="${poster}" alt="movie poster" />
+      </div>
       <div class="movie-info">
         <section class="movie-heading">
           <h2>${title}</h2>
