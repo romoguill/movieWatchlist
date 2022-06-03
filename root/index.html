@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Watchlist</title>
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Watchlist</title>
 
-    <!-- STYLES -->
-    <link rel="stylesheet" href="./css/generalStyles.css" />
-    <link rel="stylesheet" href="./css/movieCard.css" />
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet" />
 
-    <!-- SCRIPTS -->
-    <script
-      src="https://kit.fontawesome.com/f70dfefa83.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="./css/generalStyles.css" />
+  <link rel="stylesheet" href="./css/movieCard.css" />
 
-    <script src="./js/app.js" defer></script>
-  </head>
+  <!-- SCRIPTS -->
+  <script src="https://kit.fontawesome.com/f70dfefa83.js" crossorigin="anonymous"></script>
 
-  <body>
-    <header>
+  <script src="./js/app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="general-container header-container">
       <h1>Find your film</h1>
       <a href="watchlist.html">My Watchlist</a>
-    </header>
-    <main>
+    </div>
+  </header>
+  <main>
+    <div class="general-container">
+
+
       <form action="javascript:void(0)">
         <input name="title" type="text" placeholder="Search for a movie" />
         <button type="submit">Search</button>
@@ -71,6 +73,8 @@
           </div>
         </article>
       </section>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
+
 </html>

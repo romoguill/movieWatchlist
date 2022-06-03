@@ -26,7 +26,7 @@ h2 {
 p {
   font-weight: 400;
   font-size: 1.4rem;
-  color: #6B7280;
+  color: #6b7280;
   line-height: 2rem;
 }
 
@@ -46,10 +46,18 @@ header {
   background-size: cover;
   background-color: #111;
   height: 20rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 4.4rem;
+}
+
+.general-container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 form {
@@ -57,7 +65,7 @@ form {
   margin: -2.2rem 0 4.4rem 0;
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid #D1D5DB;
+  border: 1px solid #d1d5db;
 }
 
 input {
@@ -65,7 +73,7 @@ input {
   padding: 1rem 1.5rem;
   flex-basis: 75%;
   border: none;
-  border-right: 1px solid #D1D5DB;
+  border-right: 1px solid #d1d5db;
 }
 
 button {
