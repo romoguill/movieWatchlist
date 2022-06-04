@@ -87,3 +87,16 @@ button {
 main {
   padding: 0 4.4rem;
 }
+
+.container-no-selection {
+  display: flex;
+  height: calc(100vh - 20rem - 8.8rem);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-no-selection p {
+  color: #dfdddd;
+  padding-top: 1rem;
+}

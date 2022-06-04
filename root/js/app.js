@@ -79,12 +79,14 @@ const getMovieCardHtml = (movieDetails) => {
     </article>`;
 };
 
+// Insert html of all the movie cards into the container
 const renderMovies = (moviesData) => {
   moviesListElement.innerHTML = moviesData
     .map((movie) => getMovieCardHtml(movie))
     .join('');
 };
 
+// Listen for a title search, search for the data and render it
 formElement.addEventListener('submit', async (e) => {
   const formData = new FormData(formElement);
   const titleSearched = formData.get('title');
