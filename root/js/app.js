@@ -9,12 +9,15 @@ const getData = async (title) => {
       `http://www.omdbapi.com/?apikey=386b4a50&s=${title}`
     );
     const data = await response.json();
+    if (data.Error) {
+      return [];
+    }
 
     // Use Promise.all() to excecute all promises in parallel
     /* Loop over the movies array provided by the first API call and use the imdbID to call it again
         in order to get the complete date of each movie*/
     const moviesData = Promise.all(
-      data.Search.map(async (movie) => {
+      data.Search?.map(async (movie) => {
         try {
           const response = await fetch(
             `http://www.omdbapi.com/?apikey=386b4a50&i=${movie.imdbID}`
@@ -31,8 +34,6 @@ const getData = async (title) => {
     console.log(e);
   }
 };
-
-getData('Blade Runner').then((data) => console.log(data));
 
 // Create the html template for a single movie card
 const getMovieCardHtml = (movieDetails) => {
@@ -81,6 +82,16 @@ const getMovieCardHtml = (movieDetails) => {
 
 // Insert html of all the movie cards into the container
 const renderMovies = (moviesData) => {
+  // If there are no movies that matched the title searched, render message
+  if (!moviesData.length) {
+    moviesListElement.innerHTML = `
+      <div class="container-no-selection">
+        <p>Unable to find what you’re looking for. Please try another search.</p>
+      </div>
+    `;
+    return;
+  }
+
   moviesListElement.innerHTML = moviesData
     .map((movie) => getMovieCardHtml(movie))
     .join('');
@@ -92,5 +103,6 @@ formElement.addEventListener('submit', async (e) => {
   const titleSearched = formData.get('title');
 
   const moviesData = await getData(titleSearched);
+  console.log(moviesData);
   renderMovies(moviesData);
 });
