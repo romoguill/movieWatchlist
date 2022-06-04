@@ -1,5 +1,5 @@
 // Create the html template for a single movie card
-const getMovieCardHtml = (movieDetails) => {
+const getMovieCardHtml = (movieDetails, functionality) => {
   const {
     imdbID: imdbId,
     Title: title,
@@ -28,9 +28,19 @@ const getMovieCardHtml = (movieDetails) => {
             <li>
               <button class="btn-watchlist" data-imdbiD=${imdbId}>
                 <ul>
-                  <li><img src="./img/plusButton.svg" alt="watchlist add button" /></li>
-                  <li>Watchlist</li>
+                  ${
+                    functionality === 'add'
+                      ? `
+                      <li><img src="./img/plusButton.svg" alt="watchlist add button" /></li>
+                      <li>Watchlist</li>
+                    `
+                      : `
+                      <li><img src="./img/plusButton.svg" alt="watchlist remove button" /></li>
+                      <li>Remove</li>
+                    `
+                  }
                 </ul>
+                
               </button>
             </li>
           </ul>
@@ -41,7 +51,8 @@ const getMovieCardHtml = (movieDetails) => {
           </p>
         </section>
       </div>
-    </article>`;
+    </article>
+    `;
 };
 
 // Insert html of all the movie cards into the container
@@ -58,7 +69,7 @@ const renderMovies = (moviesData) => {
   }
 
   moviesListElement.innerHTML = moviesData
-    .map((movie) => getMovieCardHtml(movie))
+    .map((movie) => getMovieCardHtml(movie, 'add'))
     .join('');
 };
 
