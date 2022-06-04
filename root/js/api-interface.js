@@ -1,10 +1,20 @@
-const getData = async (title) => {
+const getData = async (identifier, searchOption) => {
   /* This API call is to get all the movies related to the serach. 
   It returns an array of movies with some data but not enougth to generate the full card */
   try {
-    const response = await fetch(
-      `http://www.omdbapi.com/?apikey=386b4a50&s=${title}`
-    );
+    let response;
+    if (searchOption === 'title') {
+      response = await fetch(
+        `http://www.omdbapi.com/?apikey=386b4a50&s=${identifier}`
+      );
+    } else if (searchOption === 'imdbId') {
+      response = await fetch(
+        `http://www.omdbapi.com/?apikey=386b4a50&i=${identifier}`
+      );
+    } else {
+      return [];
+    }
+
     const data = await response.json();
     if (data.Error) {
       return [];
