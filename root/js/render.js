@@ -56,7 +56,7 @@ const getMovieCardHtml = (movieDetails, functionality) => {
 };
 
 // Insert html of all the movie cards into the container
-const renderMovies = (moviesData) => {
+const renderMovies = (moviesData, functionality) => {
   // If there are no movies that matched the title searched, render message
   const moviesListElement = document.querySelector('#movies-list');
   if (!moviesData.length) {
@@ -69,7 +69,7 @@ const renderMovies = (moviesData) => {
   }
 
   moviesListElement.innerHTML = moviesData
-    .map((movie) => getMovieCardHtml(movie, 'add'))
+    .map((movie) => getMovieCardHtml(movie, functionality))
     .join('');
 };
 

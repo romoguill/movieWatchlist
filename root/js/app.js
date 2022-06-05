@@ -1,4 +1,4 @@
-import getData from './api-interface.js';
+import { getDataFromSearch } from './api-interface.js';
 import { renderMovies } from './render.js';
 
 const formElement = document.querySelector('form');
@@ -30,10 +30,10 @@ formElement.addEventListener('submit', async (e) => {
   const titleSearched = formData.get('title');
 
   // Call to API and store the returned object
-  const moviesData = await getData(titleSearched, 'title');
+  const moviesData = await getDataFromSearch(titleSearched);
 
   // Insert HTML template to create movies card
-  renderMovies(moviesData);
+  renderMovies(moviesData, 'add');
 
   // Give functionality to the watchlist button
   addToWatchlistBtnFunctionality();
